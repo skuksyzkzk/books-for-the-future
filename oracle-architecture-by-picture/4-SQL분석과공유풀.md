@@ -17,6 +17,9 @@ SQL문을 처리하는 방법을 생성하는데 CPU는 오랜시간을 투자�
 
 # ✨ 2. 서버 프로세스와 분석
 
+![image](https://github.com/user-attachments/assets/05d91357-9aef-4963-9775-78faf235b51e)
+
+
 서버 프로세스는 고객의 SQL 처리를 최우선적으로 수행하는 직원이라고 설명했던 것처럼 SQL Parsing도 수행합니다.
 
 오라클에서 Parsing이란 SQL문을 분해해서 어떤 요소로 구성되어 있는지를 조사하고 어떤식으로 처리할지 생각하는 것입니다.
@@ -67,6 +70,9 @@ SQL문이 들어올때마다 통계정보를 생성하면 느리기에 미리 �
 SELECT * FROM A,B WHERE A.ID = B.ID AND A.Value = 1 AND B.Value = 1;
 ```
 
+![image](https://github.com/user-attachments/assets/b9949575-9a53-4255-a74f-6db0caf24ebb)
+
+
 이 경우 만약 A테이블에 1,000만건의 데이터가 있고, B테이블에 100건의 데이터만 있다고 생각해봅시다. 또한 A테이블 전부 Value가 1이라고 가정해볼까요.
 
 그럼 이런 경우 A테이블에 접근하면 결국 천만건의 데이터를 가져오고, 그 중 B의 value가 1인 값 하나를 찾기위해서 천만번 꺼내오도록 시도할 것입니다.
@@ -95,6 +101,9 @@ CPU에서 SQL 분석 처리는 큰 규모의 작업이란게 이해가 되셨을
 공유풀도 프로세스간 공유되어야하므로 SGA에 존재합니다. SGA의 대부분은 버퍼캐시지만 남은 일부는 공유 풀로 사용되죠.
 
 공유 풀은 라이브러리 캐시나 딕셔너리 캐시와 같은 영역으로 나뉩니다.
+
+![image](https://github.com/user-attachments/assets/daaa8202-1190-487a-8619-cd219abf95e5)
+
 
 라이브러리 캐시에 SQL 실행 계획이 있고, 딕셔너리 캐시에는 통계정보의 캐시나 sql실행에 필요한 메타정보를 저장하죠.
 
@@ -128,6 +137,8 @@ SELECT * FROM EMP WHERE EMPNO = :empno;
 
 # 🪟 5. 수치로 보는 분석
 
+![image](https://github.com/user-attachments/assets/990a3235-6a41-43f2-a6fa-adc986dc0f3e)
+
 오라클에서는 스태츠팩(Statspack)이라는 표준 성능 진단 도구를 제공합니다. 설치해서 사용해야됩니다. 이것으로 CPU 사용량 중 분석을 위해 사용하는 CPU사용량이 절반이나 차지하네 이런것을 보고 바인드 변수 사용해야지 이런 분석을 할수있습니다.
 
 하지만 10g이상 부터는 AWR이라는 분석 도구로 설치안하고 볼수 있습니다.
@@ -137,6 +148,9 @@ SELECT * FROM EMP WHERE EMPNO = :empno;
 - SQL문에는 처리방법이 적혀있지 않기에 오라클 실행계획을 생성할 필요가 있다.
 - 실행 계획의 좋고 나쁨에 따라서 성능이 크게 변한다.
 - 실행 계획의 생성에 많은 CPU가 사용되기에 공유풀에 실행 계획을 캐시해두고 재활용해야된다.
+
+![image](https://github.com/user-attachments/assets/ebc3b32e-0416-4f73-a21e-110804c1f56c)
+
 
 ## 어디서 사용할까?
 
