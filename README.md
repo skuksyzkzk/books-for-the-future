@@ -16,5 +16,11 @@
 ## 🥸 책
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fskuksyzkzk%2Fbooks-for-the-future&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23FFFFFF&title=%EC%A1%B0%ED%9A%8C%EC%88%98&edge_flat=false)](https://hits.seeyoufarm.com)
 
-#### 📕 Effective Java [링크](https://github.com/EffectiveJavaBookStudy/EffectiveJava)
-#### 📗 그림으로 공부하는 오라클 구조
+### 📕 Effective Java [링크](https://github.com/EffectiveJavaBookStudy/EffectiveJava)
+### 📗 그림으로 공부하는 오라클 구조
+
+### 📕 SQL 튜닝의 시작 - sql의 이해와 효율적인 작성법
+
+> DBA 송부장님께서 직접 추천하면서 빌려주신 책
+>
+> 감사합니다.
